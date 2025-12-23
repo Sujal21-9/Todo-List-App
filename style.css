@@ -88,16 +88,16 @@ form{
     transition: 200ms ease;
 
 }
-.delete-button{
+.delete-btn{
     padding:3px;
     background:none;
     border:none;
     display:flex;
-    justify-content: cenetr;
+    justify-content: center;
     align-items:center;
     cursor:pointer;
 }
-.delete-button:hover svg{
+.delete-btn:hover svg{
     fill:red;
 
 }
@@ -122,7 +122,7 @@ input[type="checkbox"]:checked ~ .custom-checkbox svg{
 }
 input[type="checkbox"]:checked ~ .todo-text{
     text-decoration: line-through;
-    color: var(--secondary-color);
+    color: var(--accent-color);
 }
 input[type="checkbox"]{
     display:none;
