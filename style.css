@@ -158,3 +158,9 @@ input[type="checkbox"]{
 #qrcode img {
     display: block; /* Ensures the generated image is visible */
 }
+@media(max-width:500px){
+    #qrcode {
+        display: none; /* Hide QR code on small screens */
+    }
+
+}
