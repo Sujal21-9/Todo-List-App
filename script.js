@@ -19,11 +19,30 @@ if (!urlParams.get('id')) {
 }
 
 // Generate QR (Ensure this runs on the GitHub URL)
-new QRCode(document.getElementById("qrcode"), {
-    text: window.location.href,
-    width: 150, height: 150
-});
+// Function to generate QR Code safely
+function generateQRCode() {
+    const qrContainer = document.getElementById("qrcode");
+    
+    // Clear previous QR if any
+    qrContainer.innerHTML = '';
 
+    if (typeof QRCode !== 'undefined') {
+        new QRCode(qrContainer, {
+            text: window.location.href,
+            width: 150,
+            height: 150,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+    } else {
+        console.error("QRCode library not loaded yet. Retrying...");
+        setTimeout(generateQRCode, 1000); // Retry after 1 second
+    }
+}
+
+// Call it when the window is fully loaded
+window.addEventListener('load', generateQRCode);
 // --- 4. PERSISTENCE ---
 
 async function saveData() {

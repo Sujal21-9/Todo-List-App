@@ -144,3 +144,17 @@ input[type="checkbox"]{
         font-size:15w;
     }
 }
+#qrcode {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    background: white; /* QR codes need a light background to be scanable */
+    padding: 10px;
+    border-radius: 8px;
+    width: fit-content;
+    margin-inline: auto;
+}
+
+#qrcode img {
+    display: block; /* Ensures the generated image is visible */
+}
