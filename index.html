@@ -11,7 +11,14 @@
 <script src="script.js" defer></script>
 </head>
 <body>
-    <h2>ToDo App</h2>
+    <div class="head">
+        <h2>ToDo App
+        <img src="icon/black-crescent-moon-png-1.png" id="icon"alt="">
+        </h2>
+    
+    </div>
+    
+
     <div class="wrapper">
         <form action="">
             <input id="todo-input"type="text" placeholder="write anything and hit enter to add" autocomplete="off">
@@ -53,5 +60,16 @@
     <div id="qrcode"></div>
 </div>
     </div>
+    <script>
+        var icon = document.getElementById("icon");
+        icon.onclick= function(){
+            document.body.classList.toggle("light-theme");
+            if(document.body.classList.contains("light-theme")){
+                icon.src = "icon/black-crescent-moon-png-1.png";
+            }else{
+                icon.src = "icon/images.png"
+            }
+        }
+    </script>
 </body>
 </html>
